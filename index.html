@@ -1,0 +1,634 @@
+  
+  
+  
+  
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .img_bg_container {
+            width: 100%;
+            height: fit-content;
+            position: relative;
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column {
+            width: 150px;
+    float: left;
+    margin-right: 35px;
+}
+        
+
+        .word {
+                /* padding: 5px; */
+    border: 1px solid #ccc;
+    /* margin-bottom: 49px; */
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    top: 0%;
+        }
+
+        #svgCanvas {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none; /* Ensures SVG doesn't interfere with drag-and-drop */
+        }
+        
+        .correct {
+            background-color: #a5d6a7; /* A green color */
+            opacity: 0.4;
+        }
+
+        .wrong {
+            background-color: #ef9a9a; /* A red color */
+            opacity: 0.4;
+        }
+        .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    flex-wrap: wrap;
+    width: 26%;
+    position: absolute;
+    TOP: 56%;
+    left: 57%;
+}
+.content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    flex-wrap: wrap;
+    width: 26%;
+    position: absolute;
+    TOP: 56%;
+    left: 12%;
+}
+.voice_box{
+    position: absolute;
+    border: 1px solid black;
+}
+    
+    </style>
+
+
+
+
+
+    <div>
+        <section class="img_bg_container">
+            <img class="img" src="https://learner.ta3leem.iq/asset-v1:Ta3leem+1+2022_2023+type@asset+block@كتاب_قواعد_رابع_ابتدائي-24.png">
+                    <svg id="svgCanvas"></svg>
+                    <svg id="svgCanvas"></svg>
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; top: 72.7808%; height: 3.48264%; left: 56.4845%; width: 9.99375%;">
+                <div class="word" data-word-id="1">
+                           
+                </div>
+                
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: n-resize; height: 3.15656%; left: 10.4601%; top: 72.8626%; width: 9.52886%;">
+                <div class="word" data-word-id="2">
+                         
+                </div>
+                
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; left: 29.5207%; top: 80.6313%; height: 2.74768%; width: 8.4843%;">
+                <div class="word" data-word-id="2">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: n-resize; left: 10.2277%; top: 84.4748%; height: 2.91123%; width: 9.53031%;">
+                <div class="word" data-word-id="4">
+
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; left: 29.5207%; top: 73.435%; height: 2.58413%; width: 8.60053%;">
+                <div class="word" data-word-id="3">
+                         
+                </div>
+                </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: ne-resize; left: 10.4601%; top: 80.6313%; height: 2.91123%; width: 9.29787%;">
+                <div class="word" data-word-id="3">
+                            
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: s-resize; height: 2.91123%; left: 29.6369%; top: 77.1967%; width: 8.36808%;">
+                <div class="word" data-word-id="4">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: s-resize; top: 76.5425%; height: 3.23834%; left: 10.4601%; width: 9.41409%;">
+                <div class="word" data-word-id="1">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: nw-resize; height: 3.07478%; left: 29.4045%; top: 84.0659%; width: 8.71675%;">
+                <div class="word" data-word-id="1">
+                           
+                </div>
+            </div>
+             <!--Group 2  -->
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: n-resize; left: 56.717%; top: 76.7061%; height: 3.23834%; width: 9.41409%;">
+                <div class="word" data-word-id="2">
+                         
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: w-resize; left: 56.9494%; top: 80.386%; height: 2.58413%; width: 8.83297%;">
+                <div class="word" data-word-id="3">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: e-resize; left: 57.0656%; top: 83.9024%; height: 2.99301%; width: 8.83297%;">
+                <div class="word" data-word-id="4">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: sw-resize; left: 74.0343%; top: 73.435%; height: 2.74768%; width: 8.13563%;">
+                <div class="word" data-word-id="4">
+                         
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: w-resize; left: 73.8018%; top: 77.1967%; height: 2.6659%; width: 8.4843%;">
+                <div class="word" data-word-id="1">
+                            
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: n-resize; left: 73.8018%; top: 80.4678%; height: 3.23834%; width: 8.13563%;">
+                <div class="word" data-word-id="2">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: e-resize; height: 2.25702%; left: 73.8018%; top: 84.0659%; width: 8.13563%;">
+                <div class="word" data-word-id="3">
+                           
+                </div>
+            </div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.89255%; left: 67.0609%; top: 14.965%; width: 13.4819%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 7.32715%; left: 4.41649%; top: 15.5375%; width: 61.947%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.15656%; left: 48.8138%; top: 27.3132%; width: 13.5981%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.07478%; left: 17.8984%; top: 27.395%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: ne-resize; height: 3.40189%; left: 48.8138%; top: 30.6661%; width: 13.5981%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.23834%; left: 17.8984%; top: 30.6661%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.32011%; left: 17.7822%; top: 34.346%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: n-resize; top: 38.2713%; height: 2.99301%; left: 17.6659%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.32011%; left: 17.6659%; top: 41.7059%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: ne-resize; left: 48.6976%; top: 34.4278%; height: 3.15656%; width: 13.7144%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: sw-resize; left: 48.4651%; top: 38.1077%; height: 2.82946%; width: 13.9468%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 2.82946%; left: 48.2327%; top: 41.9512%; width: 14.1792%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; height: 3.72899%; left: 67.2933%; top: 57.4887%; width: 13.1332%;"></div>
+             
+              <div class="voice_box drag_resize " id="moving" onclick="highlightTest('L1',this)" style="cursor: move; left: 2.78936%; top: 57.6522%; height: 9.04445%; width: 61.3659%;"></div>
+             </section>
+
+
+    </div>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const allWords = document.querySelectorAll(".word");
+    let line;
+    let currentDraggingWord = null;
+    let currentDraggingWordElement = null;
+
+    function createLine(x1, y1, x2, y2) {
+        const ns = 'http://www.w3.org/2000/svg';
+        line = document.createElementNS(ns, 'line');
+        line.setAttribute('stroke', 'black');
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        document.getElementById('svgCanvas').appendChild(line);
+    }
+
+    function getTouchedWord(clientX, clientY) {
+        return Array.from(allWords).find(word => {
+            if (word === currentDraggingWordElement) return false;
+            const rect = word.getBoundingClientRect();
+            return clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
+        });
+    }
+
+    function startDragHandler(event) {
+        currentDraggingWordElement = event.target;
+        if (event instanceof DragEvent) {
+            event.dataTransfer.setData('text/plain', event.target.dataset.wordId);
+        } else {
+            currentDraggingWord = event.target.dataset.wordId;
+        }
+    }
+
+    function dragHandler(event) {
+        if (!line) {
+            const rect = currentDraggingWordElement.getBoundingClientRect();
+            createLine(rect.left + rect.width / 2, rect.top + rect.height / 2, event.clientX, event.clientY);
+        }
+
+        let x = event.clientX || (event.touches && event.touches[0].clientX);
+        let y = event.clientY || (event.touches && event.touches[0].clientY);
+        if (line) {
+            line.setAttribute('x2', x);
+            line.setAttribute('y2', y);
+        }
+    }
+
+    function endDragHandler(event) {
+        let x = event.clientX || (event.changedTouches && event.changedTouches[0].clientX);
+        let y = event.clientY || (event.changedTouches && event.changedTouches[0].clientY);
+        const touchedWord = getTouchedWord(x, y);
+
+        if (touchedWord && touchedWord.dataset.wordId === currentDraggingWord) {
+            const rect = touchedWord.getBoundingClientRect();
+            line.setAttribute('x2', rect.left + rect.width / 2);
+            line.setAttribute('y2', rect.top + rect.height / 2);
+            line.dataset.finalized = "true";
+            currentDraggingWordElement.classList.add('correct');
+            touchedWord.classList.add('correct');
+            currentDraggingWordElement.classList.remove('wrong')
+                touchedWord.classList.remove('wrong')
+            
+                console.log(line);
+        } else if (line && !line.dataset.finalized) {
+            currentDraggingWordElement.classList.add('wrong');
+           
+        }
+            line.remove();
+        currentDraggingWord = null;
+        line = null; // Reset the line
+    }
+
+    function allowDropHandler(event) {
+        event.preventDefault();
+    }
+
+    function dropHandler(event) {
+        if (event instanceof DragEvent) {
+            const draggedWordId = event.dataTransfer.getData('text/plain');
+            if (draggedWordId === event.currentTarget.dataset.wordId) {
+                const rect = event.currentTarget.getBoundingClientRect();
+                line.setAttribute('x2', rect.left + rect.width / 2);
+                line.setAttribute('y2', rect.top + rect.height / 2);
+                line.dataset.finalized = "true";
+                currentDraggingWordElement.classList.add('correct');
+                event.currentTarget.classList.add('correct');
+                currentDraggingWordElement.classList.remove('wrong')
+                touchedWord.classList.remove('wrong')
+                
+                
+            } else if (line && !line.dataset.finalized) {
+                currentDraggingWordElement.classList.add('wrong');
+                
+            }
+        }
+        line.remove();
+        currentDraggingWord = null;
+        line = null; // Reset the line
+    }
+
+    allWords.forEach(word => {
+        word.draggable = true;
+        word.addEventListener('dragstart', startDragHandler);
+        word.addEventListener('touchstart', startDragHandler);
+        word.addEventListener('drag', dragHandler);
+        word.addEventListener('touchmove', dragHandler);
+        word.addEventListener('dragover', allowDropHandler);
+        word.addEventListener('touchmove', allowDropHandler);
+        word.addEventListener('drop', dropHandler);
+        word.addEventListener('dragend', endDragHandler);
+        word.addEventListener('touchend', endDragHandler);
+    });
+});
+
+  
+      </script>
+
+
+
+
+ <script>
+
+    function playrootVideo(videoId) {
+        var rVideo = document.getElementById(videoId);
+        var pic = document.getElementById('rootw');
+
+        rVideo.play();
+        pic.style.backgroundColor = 'white';
+        rVideo.style.display = "block";
+
+
+
+    }
+    let timeDuration;
+     let img1 = document.getElementById('img1')
+        let img2 = document.getElementById('img2')
+
+    let audios = document.querySelectorAll('audio');
+
+
+        audios.forEach(audio => {
+            audio.addEventListener('loadedmetadata', function() {
+             timeDuration=audio.duration
+                console.log(timeDuration);
+            });
+        });
+
+    function   highlightTest(id,ele){
+       let audio = document.getElementById(id)
+        replayAudio(id)
+
+        ele.style.border = '2px solid red';
+        ele.style.backgroundColor='black'
+         ele.style.opacity='0.2'
+         img1.style.display='block';
+         img2.style.display='none';
+
+         setTimeout(function(){
+                img1.style.display='none';
+                 img2.style.display='block';
+                    closeDiv()
+                },audio.duration*1000
+                )
+             }
+
+
+    function closeDiv()
+    {
+        let allDives = document.querySelectorAll('#moving')
+
+        allDives.forEach((ele ) => {
+            ele.style.border = 'none';
+            ele.style.backgroundColor='transparent'
+            ele.style.opacity='1'
+            img1.style.display='none'
+                img2.style.display='block'
+        })
+    }
+
+</script>
+
+
+
+<!-- video animation function -->
+    <!-- <script>
+function playHiddenVideo(videoId) {
+var video = document.getElementById(videoId);
+
+// Create backdrop overlay
+var backdrop = document.createElement('div');
+backdrop.style.position = 'fixed';
+backdrop.style.top = '0';
+backdrop.style.left = '0';
+backdrop.style.width = '100%';
+backdrop.style.height = '100%';
+backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Adjust the transparency as desired
+backdrop.style.zIndex = '9999';
+document.body.appendChild(backdrop);
+
+// Play the video
+video.play();
+
+// Set video properties
+var videoSize = Math.min(window.innerWidth, window.innerHeight) * 0.6; // Adjust the size as desired
+var videoMargin = videoSize / 2;
+
+// Center the video on the page
+video.style.display = 'block';
+video.style.position = 'fixed';
+video.style.width = videoSize + 'px';
+video.style.height = videoSize + 'px';
+video.style.top = '50%';
+video.style.left = '50%';
+video.style.transform = 'translate(-50%, -50%)';
+video.style.zIndex = '10000';
+
+var closeButton = document.createElement('button');
+closeButton.innerHTML = 'اغلاق';
+closeButton.style.position = 'fixed';
+closeButton.style.top = '10px';
+closeButton.style.right = '10px';
+closeButton.style.zIndex = '10001';
+closeButton.onclick = closeVideo;
+document.body.appendChild(closeButton);
+
+// Listen for the 'ended' event
+
+        function closeVideo() {
+//player.pauseVideo();
+document.body.removeChild(backdrop);
+document.body.removeChild(closeButton);
+video.pause ();
+video.style.display = 'none';
+}
+}
+
+    </script> -->
+<!-- iframe -->
+    <!-- <script>
+function showIframe(id) {
+var iframe = document.getElementById(id);
+
+// Create backdrop overlay
+var backdrop = document.createElement('div');
+backdrop.style.position = 'fixed';
+backdrop.style.top = '0';
+backdrop.style.left = '0';
+backdrop.style.width = '100%';
+backdrop.style.height = '100%';
+backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+backdrop.style.zIndex = '9999';
+document.body.appendChild(backdrop);
+var closeButton = document.createElement('button');
+closeButton.innerHTML = 'اغلاق';
+closeButton.style.position = 'fixed';
+closeButton.style.top = '10px';
+closeButton.style.right = '10px';
+closeButton.style.zIndex = '10001';
+closeButton.onclick = closeIframe;
+document.body.appendChild(closeButton);
+
+// Center the iframe on the page
+iframe.style.display = 'block';
+iframe.style.position = 'fixed';
+iframe.style.top = '50%';
+iframe.style.left = '50%';
+iframe.style.width = '95%';
+iframe.style.height = '95%';
+iframe.style.transform = 'translate(-50%, -50%)';
+iframe.style.zIndex = '10000';
+// Function to close the iframe and remove the backdrop
+function closeIframe() {
+//player.pauseVideo();
+document.body.removeChild(backdrop);
+document.body.removeChild(closeButton);
+iframe.style.display = 'none';
+}
+
+// Listen for the 'ended' event on the iframe's contentWindow
+    closeButton.addEventListener('click', closeIframe);
+}
+
+    </script> -->
+    <script>
+        // function resizeBackgroundImages() {
+        //     // Get all elements with class 'img'
+        //     let imgElements = document.querySelectorAll('.img_fr');
+        //     // Loop through each element
+        //     imgElements.forEach(function(element) {
+        //         // Get the height and width of the element
+        //         let height = element.offsetHeight;
+        //         let width = element.offsetWidth;
+        //         // Get all elements with class 'row'
+        //         let rowElements = document.querySelectorAll('.img_bg_container');
+        //         // Loop through each element
+        //         rowElements.forEach(function(rowElement) {
+        //         // Set the background size of the element to the height and width of the 'img' element
+        //         rowElement.style.backgroundSize = width + "px " + height + "px";
+        //         });
+        //     });
+        // }
+       // window.addEventListener('load', resizeBackgroundImages);
+    </script>
+<!-- pictures script -->
+    <script>
+            function showPictureWithAudio(imageId, audioId) {
+    // Create backdrop overlay
+    var backdrop = document.createElement('div');
+    backdrop.style.position = 'fixed';
+    backdrop.style.top = '0';
+    backdrop.style.left = '0';
+    backdrop.style.width = '100%';
+    backdrop.style.height = '100%';
+    backdrop.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+    backdrop.style.zIndex = '9999';
+    document.body.appendChild(backdrop);
+
+    // Get image and audio elements by ID
+    var image = document.getElementById(imageId);
+    var audio = document.getElementById(audioId);
+
+    // Set image styles
+    image.style.display = 'none';
+    image.style.position = 'fixed';
+    image.style.top = '50%';
+    image.style.left = '50%';
+    image.style.transform = 'translate(-50%, -50%)';
+    image.style.zIndex = '10000';
+
+    // Event listener for audio ended
+        function close_audio() {
+            // Hide the image
+            image.style.display = 'none';
+
+            // Remove the backdrop
+            document.body.removeChild(backdrop);
+
+            audio.pause
+
+            document.body.removeChild(closeButton);
+
+        };
+
+    // Event listener for audio play
+    audio.addEventListener('play', function() {
+        // Show the image
+        image.style.display = 'block';
+    });
+
+    // Play the audio
+    audio.play();
+
+    var closeButton = document.createElement('button');
+    closeButton.innerHTML = 'اغلاق';
+    closeButton.style.position = 'fixed';
+    closeButton.style.top = '10px';
+    closeButton.style.right = '10px';
+    closeButton.style.zIndex = '10001';
+    closeButton.onclick = close_audio;
+    document.body.appendChild(closeButton);
+        }
+
+
+
+
+
+    </script>
+    <!-- vioce scripts -->
+    <script>
+        function replayAudio(id) {
+        // Pause all audio elements
+        var audioElements = document.getElementsByTagName('audio');
+        for (var i = 0; i < audioElements.length; i++) {
+            var audio = audioElements[i];
+            if (audio !== null && audio.id !== id) {
+            audio.pause();
+            }
+        }
+
+        // Replay the selected audio
+        var selectedAudio = document.getElementById(id);
+        if (selectedAudio !== null) {
+            selectedAudio.currentTime = 0;
+            selectedAudio.play();
+        }
+        }
+
+    </script>
+
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
